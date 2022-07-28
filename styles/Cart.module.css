@@ -1,0 +1,15 @@
+.container{
+  background: transparent linear-gradient(90deg, #FF885C 0%, #FF5353 100%) 0% 0% no-repeat padding-box;
+  width: 100%;
+  margin: 0;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+.h1 {
+  margin: 0;
+  font-size: 34px;
+}
