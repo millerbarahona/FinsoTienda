@@ -1,47 +1,47 @@
 import { useEffect, useState } from 'react'
+import { Cart } from '../components/Cart'
 import { Header } from '../components/Header'
+import { ListProducts } from '../components/ListProducts'
 import { MenuLateral } from '../components/MenuLateral'
-import { Products } from '../public/products'
+import { Search } from '../components/Search'
+import { ProductsProvider } from '../context/ProductsContext'
+import { Product } from '../public/products'
 import styles from '../styles/Home.module.css'
 
 interface Props {
-  products: Products[]
+  products: Product[]
 }
 
 const Home = (props: Props) => {
   const [products, setProducts] = useState(props.products)
 
   return (
-    <div className={styles.container}>
-      <Header />
-      <div className={styles.main}>
-        <MenuLateral />
+    <ProductsProvider>
+      <div className={styles.container}>
+        <div className={styles.navbar}>
+          <Header />
+        </div>
+        <aside className={styles.aside}>
+          <MenuLateral />
+        </aside>
         <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '1em', marginTop: '2em' }}>
-            {
-              products?.map(item => (
-                <div key={item.name!}>
-                  <img src={item.img} alt="" style={{ width: '100px', borderRadius: '10px' }} />
-                  <h2>{item.name}</h2>
-                  <h4>{item.precio}</h4>
-                </div>
-              ))
-            }
+          <div className={styles.search}>
+            <Search />
           </div>
+          <ListProducts products={products} />
         </main>
+        <aside className={styles.cart}>
+          <Cart />
+        </aside>
       </div>
-
-    </div>
+    </ProductsProvider>
   )
 }
 
 export async function getStaticProps() {
   const res = await fetch('http://localhost:3000/api/products')
   const json = await res.json()
-
+  console.log('g')
   return {
     props: {
       products: json

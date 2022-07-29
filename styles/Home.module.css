@@ -1,3 +1,49 @@
 .main {
+  display: grid;
+}
+
+.main_content{
   display: flex;
+  flex-direction: row;
+}
+
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-areas: 
+  "navbar navbar navbar navbar navbar"
+  "sidebar main main main cart";
+}
+
+.aside {
+  grid-area: sidebar;
+  z-index: 2;
+}
+
+.navbar {
+  grid-area: navbar;
+  z-index: 2;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  margin-top: 120px;
+  z-index: 1;
+}
+
+.cart{
+  display: flex;
+  flex-direction: row-reverse;
+  position: sticky;
+  grid-area: cart;
+  z-index: 2;
+}
+.search{
+  width: 100%;
+  display: flex;
+  position: sticky;
+  top: 120px;
+  grid-area: cart;
+  background-color: white;
 }

@@ -1,0 +1,25 @@
+.container{
+  background: transparent linear-gradient(90deg, #FF885C 0%, #FF5353 100%) 0% 0% no-repeat padding-box;
+  width: 100%;
+  margin: 0;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  display: inline-block;
+  box-shadow: 0pt 3pt 6pt #00000029;
+  color: white;
+}
+
+.flex {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  margin: 0;
+  font-size: 34px;
+}

@@ -1,19 +1,22 @@
 .container {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: sticky;
+  top: 0;
   margin-top: 10px;
   height: 100vh;
 }
 
 .container_top {
   background: #FF5D54 0% 0% no-repeat padding-box;
+  color: white;
   padding: 10px 40px;
   width: 100px;
   border-radius: 0 50px 0 0;
-  display: flex;
+  display: block;
   justify-content: center;
   justify-items: center;
+  box-shadow: 6pt 3pt 6pt #00000029;
 }
 
 .container_top h1 {
@@ -24,6 +27,36 @@
 .container_bottom {
   border-radius: 0 30px 0 0;
   background-color: white;
+  display: flex;
   height: 100%;
-  width: 200px;
+  width: 230px;
+  color: #FF5D54;
+  box-shadow: 6pt -3pt 6pt #00000029;
+  overflow-y: scroll;
+}
+
+.container_bottom::-webkit-scrollbar {
+  display: none;
+}
+
+.flex_container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 30px;
+}
+
+.list_options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
