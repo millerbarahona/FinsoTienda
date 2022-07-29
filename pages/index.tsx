@@ -41,7 +41,6 @@ const Home = (props: Props) => {
 export async function getStaticProps() {
   const res = await fetch('http://localhost:3000/api/products')
   const json = await res.json()
-  console.log('g')
   return {
     props: {
       products: json
